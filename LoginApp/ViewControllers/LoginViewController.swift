@@ -14,8 +14,10 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet var loginButton: UIButton!
 
-	private let login = "qwe"
-	private let password = "123"
+//	private let login = "qwe"
+//	private let password = "123"
+
+	private let user = User.getUser()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,15 +26,42 @@ class LoginViewController: UIViewController {
 		loginButton.layer.cornerRadius = 10
 	}
 
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//		guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+//		welcomeVC.userName = "\(user.person.firstName) \(user.person.lastName)"
+//
+//		print(welcomeVC.userName)
+//	}
+
+
+// TODO: save unwrap vc from VC's
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
-		guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-		welcomeVC.userName = login
+		guard let tapBarController = segue.destination as? UITabBarController else { return }
+
+		guard let viewControllers = tapBarController.viewControllers else { return }
+
+		for viewController in viewControllers {
+			if let welcomeVC = viewController as? WelcomeViewController {
+				welcomeVC.userName = "\(user.person.firstName) \(user.person.lastName)"
+				
+			} else if let navigationVC = viewController as? UINavigationController {
+
+				let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+
+				aboutUserVC.title = "\(user.person.firstName) \(user.person.lastName)"
+
+
+
+			}
+		}
 	}
 
 	@IBAction func logInButtonPressed() {
 
-		if userNameTF.text != login || passwordTF.text != password {
+		if userNameTF.text != user.login
+			|| passwordTF.text != user.password {
 			showAlert(with: "Oops!", and: "User Name or Password is wrong.\nTry again.")
 			passwordTF.text = ""
 		}
@@ -40,9 +69,9 @@ class LoginViewController: UIViewController {
 
 	@IBAction func forgotButtonsPressed(_ sender: UIButton) {
 		if sender.tag == 0 {
-			showAlert(with: "Oh my god!", and: "Your user name is \(login)")
+			showAlert(with: "OMG!", and: "Your user name is \(user.login)")
 		} else if sender.tag == 1 {
-			showAlert(with: "Really?", and: "Password is \(password)")
+			showAlert(with: "Do you forgot your password?", and: "Try \(user.password)")
 		}
 	}
 

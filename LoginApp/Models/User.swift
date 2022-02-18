@@ -18,8 +18,8 @@ struct User {
 			person: Person(
 				firstName: "Arsalan",
 				lastName: "Balzhinimaev",
-				age: 39,
-				hobbies: ["Snowboarding", "Bicycle", "Guitar"]
+				hobbies: ["Snowboarding", "Bicycle", "Guitar"],
+				info: "Hi! My name is Arsalan. I'm learning iOS-development on swiftbook.ru. It's so hard, but so interesting!"
 			)
 		)
 	}
@@ -28,6 +28,6 @@ struct User {
 struct Person {
 	let firstName: String
 	let lastName: String
-	let age: Int
 	let hobbies: [String]
+	let info: String
 }

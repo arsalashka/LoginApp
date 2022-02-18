@@ -14,9 +14,6 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet var loginButton: UIButton!
 
-//	private let login = "qwe"
-//	private let password = "123"
-
 	private let user = User.getUser()
 
 	override func viewDidLoad() {
@@ -26,34 +23,24 @@ class LoginViewController: UIViewController {
 		loginButton.layer.cornerRadius = 10
 	}
 
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//		guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-//		welcomeVC.userName = "\(user.person.firstName) \(user.person.lastName)"
-//
-//		print(welcomeVC.userName)
-//	}
-
-
-// TODO: save unwrap vc from VC's
-
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let tapBarController = segue.destination as? UITabBarController else { return }
 
 		guard let viewControllers = tapBarController.viewControllers else { return }
 
 		for viewController in viewControllers {
+
 			if let welcomeVC = viewController as? WelcomeViewController {
 				welcomeVC.userName = "\(user.person.firstName) \(user.person.lastName)"
 				
 			} else if let navigationVC = viewController as? UINavigationController {
 
-				let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
-
-				aboutUserVC.title = "\(user.person.firstName) \(user.person.lastName)"
-
-
-
+				guard let aboutUserVC = navigationVC.topViewController as? AboutMeViewController else { return }
+				
+				aboutUserVC.firstName = user.person.firstName
+				aboutUserVC.lastName = user.person.lastName
+				aboutUserVC.hobbies = user.person.hobbies
+				aboutUserVC.info = user.person.info
 			}
 		}
 	}

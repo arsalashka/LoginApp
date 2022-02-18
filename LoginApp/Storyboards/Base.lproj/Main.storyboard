@@ -190,27 +190,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQZ-hu-k3w">
+                                <rect key="frame" x="20" y="323.5" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-7k-SDY">
-                                <rect key="frame" x="147" y="318" width="81.5" height="31"/>
+                                <rect key="frame" x="145" y="364" width="85" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="MoreInfo" titleAlignment="automatic"/>
+                                <buttonConfiguration key="configuration" style="plain" title="More info" titleAlignment="automatic"/>
                                 <connections>
-                                    <action selector="moreInfoButtonPressed" destination="0wn-WG-mz6" eventType="touchUpInside" id="uzs-Jv-zeE"/>
+                                    <segue destination="wbf-FN-a9w" kind="show" id="jv0-Xu-lgY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KgQ-sR-H8o"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="aD3-7k-SDY" firstAttribute="centerY" secondItem="Y2O-Px-bqz" secondAttribute="centerY" id="Xtg-cd-l16"/>
-                            <constraint firstItem="aD3-7k-SDY" firstAttribute="centerX" secondItem="Y2O-Px-bqz" secondAttribute="centerX" id="xAe-sr-z3Q"/>
+                            <constraint firstItem="aD3-7k-SDY" firstAttribute="top" secondItem="YQZ-hu-k3w" secondAttribute="bottom" constant="20" id="GXs-Si-gZK"/>
+                            <constraint firstItem="YQZ-hu-k3w" firstAttribute="leading" secondItem="KgQ-sR-H8o" secondAttribute="leading" constant="20" id="NBW-Dc-noZ"/>
+                            <constraint firstItem="aD3-7k-SDY" firstAttribute="centerX" secondItem="Y2O-Px-bqz" secondAttribute="centerX" id="bHW-RS-mRV"/>
+                            <constraint firstItem="YQZ-hu-k3w" firstAttribute="centerY" secondItem="Y2O-Px-bqz" secondAttribute="centerY" id="mUY-ct-64J"/>
+                            <constraint firstItem="KgQ-sR-H8o" firstAttribute="trailing" secondItem="YQZ-hu-k3w" secondAttribute="trailing" constant="20" id="vAR-qR-THD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PLo-N5-Oec"/>
+                    <connections>
+                        <outlet property="userInfoLabel" destination="YQZ-hu-k3w" id="J8F-Bl-vbx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJB-ep-4Nn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3031" y="90"/>
+        </scene>
+        <!--And i have three my favorite hobbies:-->
+        <scene sceneID="ZtG-Ag-5i1">
+            <objects>
+                <viewController id="wbf-FN-a9w" customClass="MoreInfoViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PiB-xp-JdK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-6k-yGR">
+                                <rect key="frame" x="-1324.5" y="115" width="3024" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="hz9-Wj-ONI">
+                                <rect key="frame" x="-397.5" y="277" width="1170" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="S8w-lz-AXy">
+                                <rect key="frame" x="-397.5" y="445" width="1170" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVU-TW-Vfo">
+                                <rect key="frame" x="16" y="60" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UGa-oi-Xd4"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="dVU-TW-Vfo" firstAttribute="top" secondItem="UGa-oi-Xd4" secondAttribute="top" constant="16" id="3iA-aU-JdK"/>
+                            <constraint firstItem="UGa-oi-Xd4" firstAttribute="trailing" secondItem="dVU-TW-Vfo" secondAttribute="trailing" constant="16" id="UJW-w6-dS1"/>
+                            <constraint firstItem="dVU-TW-Vfo" firstAttribute="leading" secondItem="UGa-oi-Xd4" secondAttribute="leading" constant="16" id="g8c-OX-RSP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="And i have three my favorite hobbies:" id="Rng-Zg-Gq5"/>
+                    <connections>
+                        <outlet property="label" destination="dVU-TW-Vfo" id="s6Y-Ul-cjx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehC-3i-Lak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3770" y="90"/>
         </scene>
         <!--AboutMe-->
         <scene sceneID="QcG-eH-R5o">
@@ -218,8 +274,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DC6-kh-VFh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="AboutMe" image="person" catalog="system" id="VqI-9Z-coN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OhL-bt-NJK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OhL-bt-NJK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -233,19 +289,25 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="3024" height="4032"/>
+        <image name="Image-1" width="1170" height="1541"/>
+        <image name="Image-2" width="1170" height="1169"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

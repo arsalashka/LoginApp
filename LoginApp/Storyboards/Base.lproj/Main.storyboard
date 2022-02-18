@@ -232,31 +232,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-6k-yGR">
-                                <rect key="frame" x="-1324.5" y="115" width="3024" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="hz9-Wj-ONI">
-                                <rect key="frame" x="-397.5" y="277" width="1170" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="S8w-lz-AXy">
-                                <rect key="frame" x="-397.5" y="445" width="1170" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVU-TW-Vfo">
                                 <rect key="frame" x="16" y="60" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="aJ2-OF-uHa">
+                                <rect key="frame" x="16" y="80.5" width="180" height="240"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Yc-tl-fYY">
+                                <rect key="frame" x="16" y="411" width="182" height="240"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="CAp-h8-der">
+                                <rect key="frame" x="119" y="243.5" width="240" height="240"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UGa-oi-Xd4"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
                             <constraint firstItem="dVU-TW-Vfo" firstAttribute="top" secondItem="UGa-oi-Xd4" secondAttribute="top" constant="16" id="3iA-aU-JdK"/>
+                            <constraint firstAttribute="bottom" secondItem="8Yc-tl-fYY" secondAttribute="bottom" constant="16" id="Fx0-Bi-QVB"/>
+                            <constraint firstItem="UGa-oi-Xd4" firstAttribute="trailing" secondItem="CAp-h8-der" secondAttribute="trailing" constant="16" id="NgX-a3-ds1"/>
                             <constraint firstItem="UGa-oi-Xd4" firstAttribute="trailing" secondItem="dVU-TW-Vfo" secondAttribute="trailing" constant="16" id="UJW-w6-dS1"/>
+                            <constraint firstItem="aJ2-OF-uHa" firstAttribute="top" secondItem="dVU-TW-Vfo" secondAttribute="bottom" id="VNY-LP-zSh"/>
+                            <constraint firstItem="8Yc-tl-fYY" firstAttribute="leading" secondItem="UGa-oi-Xd4" secondAttribute="leading" constant="16" id="buF-A5-Xxd"/>
                             <constraint firstItem="dVU-TW-Vfo" firstAttribute="leading" secondItem="UGa-oi-Xd4" secondAttribute="leading" constant="16" id="g8c-OX-RSP"/>
+                            <constraint firstItem="aJ2-OF-uHa" firstAttribute="leading" secondItem="UGa-oi-Xd4" secondAttribute="leading" constant="16" id="q9S-TG-V1D"/>
+                            <constraint firstItem="CAp-h8-der" firstAttribute="centerY" secondItem="PiB-xp-JdK" secondAttribute="centerY" constant="30" id="zYM-cd-EL7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="And i have three my favorite hobbies:" id="Rng-Zg-Gq5"/>
@@ -266,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehC-3i-Lak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3770" y="90"/>
+            <point key="canvasLocation" x="3768.8000000000002" y="89.505247376311857"/>
         </scene>
         <!--AboutMe-->
         <scene sceneID="QcG-eH-R5o">
@@ -289,9 +292,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="3024" height="4032"/>
-        <image name="Image-1" width="1170" height="1541"/>
-        <image name="Image-2" width="1170" height="1169"/>
+        <image name="Image" width="180" height="240"/>
+        <image name="Image-1" width="182" height="240"/>
+        <image name="Image-2" width="240" height="240"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBlueColor">

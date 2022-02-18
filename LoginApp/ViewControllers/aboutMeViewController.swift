@@ -9,26 +9,23 @@ import UIKit
 
 class AboutMeViewController: UIViewController {
 
-	var userName = ""
+	@IBOutlet var userInfoLabel: UILabel!
+
+	var firstName = ""
+	var lastName = ""
+	var hobbies = [""]
+	var info = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		navigationItem.title = "\(firstName) \(lastName)"
+		userInfoLabel.text = "\(info)"
     }
-    
-	@IBAction func moreInfoButtonPressed() {
-		
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+		guard let moreInfoVC = segue.destination as? MoreInfoViewController else { return }
+		moreInfoVC.hobbies = hobbies
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,23 +9,34 @@ import UIKit
 
 class MoreInfoViewController: UIViewController {
 
+	@IBOutlet var snowboardImage: UIImageView!
+	@IBOutlet var guitarImage: UIImageView! {
+		didSet {
+//			guitarImage.layer.cornerRadius = guitarImage.frame.width / 2
+		}
+	}
+	
 	@IBOutlet var label: UILabel!
 
-	var hobbies = [""]
+	var user: User!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		label.text = getHobbies()
+
+		snowboardImage.image = UIImage(named: user.person.images[0])
+		guitarImage.image = UIImage(named: user.person.images[1])
     }
 
 	private func getHobbies() -> String {
 
 		var result = ""
-		for hobby in hobbies {
+		for hobby in user.person.hobbies {
 			result += hobby
 
-			if hobby != hobbies.last {
+			if hobby != user.person.hobbies.last {
 				result += ", "
 			}
 		}

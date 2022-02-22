@@ -15,12 +15,7 @@ struct User {
 		User(
 			login: "qwe",
 			password: "123",
-			person: Person(
-				firstName: "Arsalan",
-				lastName: "Balzhinimaev",
-				hobbies: ["Snowboarding", "Bicycle", "Guitar"],
-				info: "Hi! My name is Arsalan. I'm learning iOS-development on swiftbook.ru. It's so hard, but so interesting!"
-			)
+			person: Person.getPerson()
 		)
 	}
 }
@@ -30,4 +25,15 @@ struct Person {
 	let lastName: String
 	let hobbies: [String]
 	let info: String
+	let images: [String]
+
+	static func getPerson() -> Person {
+		Person(
+			firstName: "Arsalan",
+			lastName: "Balzhinimaev",
+			hobbies: ["Snowboarding", "Bicycle", "Guitar"],
+			info: "Hi! My name is Arsalan. I'm learning iOS-development on swiftbook.ru. It's so hard, but so interesting!",
+			images: ["SnowBoard", "Guitar"]
+		)
+	}
 }

@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "snowboard.jpg",
-      "idiom" : "iphone",
+      "filename" : "SnowBoard.jpg",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

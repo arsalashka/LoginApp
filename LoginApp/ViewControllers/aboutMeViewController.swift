@@ -11,21 +11,18 @@ class AboutMeViewController: UIViewController {
 
 	@IBOutlet var userInfoLabel: UILabel!
 
-	var firstName = ""
-	var lastName = ""
-	var hobbies = [""]
-	var info = ""
+	var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		navigationItem.title = "\(firstName) \(lastName)"
-		userInfoLabel.text = "\(info)"
+		navigationItem.title = "\(user.person.firstName) \(user.person.lastName)"
+		userInfoLabel.text = "\(user.person.info)"
     }
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 		guard let moreInfoVC = segue.destination as? MoreInfoViewController else { return }
-		moreInfoVC.hobbies = hobbies
+		moreInfoVC.user = user
 	}
 }

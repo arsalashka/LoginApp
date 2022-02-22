@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController {
 	@IBOutlet var welcomeLabel: UILabel!
 	@IBOutlet var logOutButton: UIButton!
 
-	var userName = ""
+	var user: User!
 
 	private let primaryColor = UIColor(
 		red: 210/255,
@@ -31,7 +31,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
 		view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-		welcomeLabel.text = "Welcome, \(userName)!"
+		welcomeLabel.text = "Welcome, \(user.person.firstName) \(user.person.lastName)!"
 		logOutButton.layer.cornerRadius = 10
     }
 }
